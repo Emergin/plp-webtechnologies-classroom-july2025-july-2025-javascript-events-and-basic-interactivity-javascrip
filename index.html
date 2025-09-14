@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Experience</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with Dark Mode Toggle -->
+    <header class="header">
+        <h1>Interactive Web Experience</h1>
+        <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        
+        <!-- Part 1: Interactive Counter Game -->
+        <section class="card">
+            <h2>🎮 Counter Game</h2>
+            <div class="counter-section">
+                <div class="counter-display">
+                    <span id="counterValue">0</span>
+                </div>
+                <div class="counter-controls">
+                    <button id="decreaseBtn" class="btn btn-danger">-1</button>
+                    <button id="increaseBtn" class="btn btn-success">+1</button>
+                    <button id="resetBtn" class="btn btn-secondary">Reset</button>
+                </div>
+                <div id="counterMessage" class="message"></div>
+            </div>
+        </section>
+
+        <!-- Part 2: Collapsible FAQ Section -->
+        <section class="card">
+            <h2>❓ Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq1">
+                        What is JavaScript? <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq1">
+                        <p>JavaScript is a programming language that enables interactive web pages and dynamic content. It's essential for modern web development!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq2">
+                        How do event listeners work? <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq2">
+                        <p>Event listeners "listen" for specific user actions (clicks, typing, etc.) and execute code when those actions happen. They make websites interactive!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq3">
+                        Why is form validation important? <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq3">
+                        <p>Form validation ensures users enter correct information, prevents errors, and creates a better user experience by providing helpful feedback.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 3: Tabbed Interface -->
+        <section class="card">
+            <h2>📂 Tabbed Information Panel</h2>
+            <div class="tabs-container">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="html">HTML</button>
+                    <button class="tab-btn" data-tab="css">CSS</button>
+                    <button class="tab-btn" data-tab="js">JavaScript</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-panel active" id="html">
+                        <h3>HyperText Markup Language</h3>
+                        <p>HTML provides the structure and content of web pages. It uses tags to define elements like headings, paragraphs, links, and forms.</p>
+                        <ul>
+                            <li>Semantic structure</li>
+                            <li>Content organization</li>
+                            <li>Accessibility features</li>
+                        </ul>
+                    </div>
+                    <div class="tab-panel" id="css">
+                        <h3>Cascading Style Sheets</h3>
+                        <p>CSS handles the visual presentation of web pages. It controls layout, colors, fonts, animations, and responsive design.</p>
+                        <ul>
+                            <li>Visual styling</li>
+                            <li>Layout control</li>
+                            <li>Responsive design</li>
+                        </ul>
+                    </div>
+                    <div class="tab-panel" id="js">
+                        <h3>JavaScript Programming</h3>
+                        <p>JavaScript adds interactivity and dynamic behavior to websites. It handles user events, manipulates content, and validates forms.</p>
+                        <ul>
+                            <li>Interactive features</li>
+                            <li>DOM manipulation</li>
+                            <li>Event handling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 4: Contact Form with Validation -->
+        <section class="card">
+            <h2>📋 Contact Form with Validation</h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="fullName">Full Name *</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                    <div class="error-message" id="nameError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                    <div class="error-message" id="phoneError"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="error-message" id="passwordError"></div>
+                    <div class="password-requirements">
+                        <small>Password must be at least 8 characters with uppercase, lowercase, and number</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+                    <div class="error-message" id="messageError"></div>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                        <span class="checkmark"></span>
+                        I agree to the terms and conditions *
+                    </label>
+                    <div class="error-message" id="termsError"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
+                
+                <div id="formSuccess" class="success-message"></div>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Interactive Web Experience - Built with HTML, CSS & JavaScript</p>
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
